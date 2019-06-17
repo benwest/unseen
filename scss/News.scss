@@ -1,0 +1,40 @@
+.news {
+    &__row {
+        justify-content: space-around;
+    }
+    &__year-container {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+    }
+    &__year {
+        text-align: center;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        @include sticky ( calc( 50vh - .4em ) );
+        line-height: .8;
+        margin-bottom: .5em;
+    }
+    &__item {
+        margin-bottom: $gutter * 2;
+        animation: fade-in 1s;
+        padding-left: $gutter / 2;
+        padding-right: $gutter / 2;
+        @media screen and ( min-width: 667px ) {
+            width: ( 6 / $columns ) * 100%;
+        }
+    }
+    &__thumbnail {
+        margin-bottom: 20px;
+    }
+    &__title {
+        margin-bottom: 20px;
+    }
+    &__more {
+        cursor: pointer;
+        text-align: center;
+    }
+}

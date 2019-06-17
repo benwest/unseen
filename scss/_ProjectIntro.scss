@@ -1,0 +1,68 @@
+.project-intro {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: calc( 100vh - 2rem );
+    @include medium {
+        height: 100vh;
+    }
+    // &__cursor {
+    //     position: fixed;
+    //     top: 1rem;
+    //     left: 1rem;
+    //     text-transform: uppercase;
+    //     letter-spacing: .3em;
+    //     pointer-events: none;
+    //     .touch & {
+    //         display: none;
+    //     }
+    // }
+    &__title {
+        position: fixed;
+        top: $gutter;
+        left: 50%;
+        transform: translateX(-50%);
+        transition: opacity 1s;
+        display: none;
+        color: $grey;
+        z-index: 900;
+        @include medium {
+            display: block;
+        }
+    }
+    // &__scroll {
+    //     position: fixed;
+    //     bottom: $gutter * 2;
+    //     left: 50%;
+    //     transform: translateX(-50%);
+    //     @keyframes pulse {
+    //         from { color: white; }
+    //         to { color: black; }
+    //     }
+    //     animation: pulse 1.5s infinite alternate;
+    //     transition: opacity .2s;
+    //     .touch & {
+    //         display: none;
+    //     }
+    // }
+    &__text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        padding: 2rem;
+        font-size: 2rem;
+        font-family: 'Ogg', serif;
+        text-align: center;
+        transform: translate(-50%, -50%);
+        @include medium {
+            display: none;
+        }
+    }
+    &__title {
+        text-transform: uppercase;
+    }
+    &__summary {
+        color: $grey;
+    }
+}

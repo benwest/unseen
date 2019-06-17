@@ -1,0 +1,25 @@
+@mixin small {
+    @media screen and ( max-width: 767px ) { @content; }
+}
+
+@mixin medium {
+    @media screen and ( min-width: 768px ) { @content; }
+}
+
+@mixin large {
+    @media screen and ( min-width: 1440px ) { @content; }
+}
+
+@mixin xlarge {
+    @media screen and ( min-width: 1880px ) { @content; }
+}
+
+@mixin sticky ( $top: null ) {
+    @supports (position: sticky) or (position: -webkit-sticky) or (position: -moz-sticky) or (position: -ms-sticky) {
+        position: -webkit-sticky;
+        position: -moz-sticky;
+        position: -ms-sticky;
+        position: sticky;
+        @if ( $top ) { top: $top; }
+    }
+}

@@ -1,0 +1,8 @@
+.project {
+    &__intro {
+        height: 100vh;
+        .touch & {
+            // height: calc( 100vh - 5rem );
+        }
+    }
+}

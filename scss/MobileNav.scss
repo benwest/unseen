@@ -1,0 +1,68 @@
+.mobile-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    text-align: center;
+    padding-top: 1.5rem;
+    z-index: 900;
+    @include medium {
+        display: none;
+    }
+    &__item {
+        display: block;
+        padding: .75rem 0;
+        color: $grey;
+        transition: color .2s, transform .2s, opacity .2s;
+        &--active {
+            color: white;
+        }
+        .red & {
+            color: $pink;
+        }
+        @for $i from 2 through 5 {
+            &:nth-of-type(#{$i}) {
+                opacity: 0;
+                pointer-events: none;
+                transform: translateY( ( $i - 1 ) * -100% );
+            }
+        }
+    }
+    &__toggle-text {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 0;
+        transition: opacity .2s;
+        &--visible {
+            opacity: 1;
+        }
+    }
+    &__background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: black;
+        opacity: 0;
+        transition: opacity .2s, background .2s;
+        pointer-events: none;
+        .red & {
+            // transition: opacity .2s, background .2s .1s;
+            background: $red;
+        }
+    }
+    &--open {
+        .mobile-nav__item {
+            transform: none;
+            opacity: 1;
+            pointer-events: visible;
+        }
+        .mobile-nav__background {
+            opacity: .9;
+            pointer-events: visible;
+        }
+    }
+}

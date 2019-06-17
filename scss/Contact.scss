@@ -1,0 +1,118 @@
+.contact {
+    background: $red;
+    // min-height: 100vh;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow-y: scroll;
+    padding-top: 5rem;
+    padding-bottom: 2rem;
+    display: flex;
+    flex-wrap: nowrap;
+    @media ( max-height: 500px ) {
+        position: relative;
+    }
+    flex-direction: column;
+    justify-content: space-between;
+    a:hover {
+        text-decoration: underline;
+    }
+    @include medium {
+        padding-top: 90px;
+        padding-bottom: 3rem;
+    }
+    @include large {
+        
+    }
+    &__heading {
+        padding-bottom: 1rem;
+    }
+    &__body {
+        @include small {
+            margin-top: 3rem;
+            flex: 1
+        }
+        @include medium {
+            .hi-dpi & {
+                a {
+                    // -webkit-text-fill-color: transparent;
+                    // -webkit-text-stroke: .5px white
+                }
+            }
+        }
+    }
+    &__footer {
+        font-size: 1.25rem;
+        line-height: 1.6;
+        padding-top: 1rem;
+        @include medium {
+            display: flex;
+            justify-content: space-between;
+        }
+        a {
+            // text-decoration: underline;
+        }
+    }
+    &__credit {
+        @include medium {
+            text-align: right;
+        }
+    }
+    &__seperator {
+        display: none;
+        @include medium {
+            display: block;
+        }
+    }
+    &__credit {
+        @include medium {
+            flex-grow: 1
+        }
+    }
+}
+
+.newsletter {
+    display: flex;
+    width: 100%;
+    border-bottom: 1px solid white;
+    @include medium {
+        width: column-width(6);
+    }
+    @include large {
+        width: column-width(4);
+    }
+    &__input,
+    &__submit {
+        font: inherit;
+        background: none;
+        border: none;
+        padding: .25em 0;
+    }
+    &__input {
+        flex: 1;
+        &::placeholder {
+            color: inherit;
+        }
+        &:focus {
+            outline: 0;
+        }
+    }
+    &__submit {
+        transition: color .2s;
+        color: transparent;
+        outline: 0;
+        &--valid {
+            color: inherit;
+        }
+    }
+    &__message {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: $red;
+    }
+}

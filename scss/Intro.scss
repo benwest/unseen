@@ -1,0 +1,39 @@
+.intro {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: white;
+    color: white;
+    z-index: 1000;
+    @keyframes intro {
+        20% {
+            color: black;
+            background: white;
+        }
+        50% {
+            opacity: 1;
+        }
+        70% {
+            color: white;
+            background: black;
+        }
+        100% {
+            opacity: 0;
+            color: white;
+            background: black;
+        }
+    }
+    animation: intro 5s;
+    animation-fill-mode: both;
+    &__text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        padding: 1rem;
+        text-align: center;
+        transform: translate(-50%,-50%);
+    }
+}

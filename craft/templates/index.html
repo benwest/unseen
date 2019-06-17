@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	
+	<title>{{ siteName }}</title>
+	
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="{{ siteName }}" />
+	<meta property="og:url" content="{{ craft.request.getUrl() }}" />
+	<meta property="og:description" content="{{ globals.metaDescription }}" />
+	{% if globals.metaImage | length %}<meta property="og:image" content="{{ globals.metaImage.first.url }}" />{% endif %}
+	
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="{{ siteName }}">
+	<meta name="twitter:url" content="{{ craft.request.getUrl() }}">
+	<meta name="twitter:creator" content="{{ globals.twitter }}" />
+	<meta name="twitter:description" content="{{ globals.metaDescription }}">
+	{% if globals.metaImage | length %}<meta name="twitter:image" content="{{ globals.metaImage.first.url }}">{% endif %}
+	
+	{% if globals.favicon16 | length %}<link rel="icon" href="{{ globals.favicon16.first.url }}" sizes="16x16">{% endif %}
+    {% if globals.favicon32 | length %}<link rel="icon" href="{{ globals.favicon32.first.url }}" sizes="32x32">{% endif %}
+    
+	<link rel="stylesheet" href="{{ siteUrl }}style.css" type="text/css" />
+</head>
+<body>
+	{% if globals.googleAnalyticsID %}
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-73728439-2"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+		  gtag('config', '{{ globals.googleAnalyticsID }}');
+		</script>
+	{% endif %}
+	<script type="text/json" id="data">{{ data('all') | json_encode | raw }}</script>
+	<script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=fetch"></script>
+	<script src="{{ siteUrl }}bundle.js"></script>
+</body>
+</html>

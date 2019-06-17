@@ -1,0 +1,67 @@
+.about {
+    // blockquote p {
+    //     @extend h2;
+    // }
+    &__name {
+        letter-spacing: .3em;
+        text-transform: uppercase;
+    }
+    &__clients {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        margin: 0 -.5rem;
+    }
+    &__client {
+        width: 33%;
+        flex-shrink: 0;
+        padding: 0 .5rem 1rem .5rem;
+        @include medium {
+            width: 12.5%;
+        }
+    }
+    &__section {
+        margin: 135px 0;
+        &--profile {
+            margin-top: 90px;
+            h2 {
+                margin-bottom: 1em;
+            }
+            strong {
+                letter-spacing: .3em;
+            }
+        }
+        &:last-child {
+            margin: 135px 0 2.75rem 0;
+        }
+    }
+    &__section-title {
+        text-align: center;
+        margin: $gutter * 2;
+        @include medium {
+            display: none;
+        }
+    }
+    &__ethos {
+        @include large {
+            column-gap: $gutter;
+            column-count: 2;
+        }
+    }
+    &__bio {
+        margin: 2rem 0;
+        @include medium {
+            width: column-width( 13 );
+            column-gap: $gutter;
+            column-fill: auto;
+            column-count: 2;
+            @media ( min-width: 1024px ) {
+                width: column-width( 12 );
+                column-count: 3;
+            }
+            p {
+                position: static;
+            }
+        }
+    }
+}

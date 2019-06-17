@@ -1,0 +1,8 @@
+.flipper {
+    height: 100%;
+    perspective: 100em;
+    &__inner {
+        height: 100%;
+        transform-style: preserve-3d
+    }
+}

@@ -1,0 +1,15 @@
+.accordion {
+    &__title {
+        cursor: pointer;
+        h2 {
+            margin: 0;
+        }
+    }
+    &__content {
+        overflow: hidden;
+        transition: max-height .5s;
+        &--open {
+            max-height: 50vh;
+        }
+    }
+}

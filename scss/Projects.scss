@@ -1,0 +1,106 @@
+.projects {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Ogg', serif;
+    line-height: 1.2;
+    text-align: center;
+    font-size: 2rem;
+    padding: 2rem;
+    transition: opacity 1s;
+    font-size: 25px;
+    @include medium {
+        font-size: 38px;
+        text-align: left;
+        padding: 0;
+        width: auto;
+        height: auto;
+        top: 60px;
+        left: column-offset(1);
+        bottom: 60px;
+        right: $gutter;
+    }
+    // @include large {
+    //     font-size: 50px;
+    // }
+    // @include xlarge {
+    //     font-size: 58px;
+    // }
+    &--disabled {
+        pointer-events: none;
+    }
+    &--hidden {
+        opacity: 0;
+    }
+    &__inner {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        transform: translate(-50%, -50%);
+        @include medium {
+            top: 0;
+            left: 0;
+            transform: none;
+        }
+    }
+    &__item {
+        @include medium {
+            display: inline;
+            transition: opacity .5s;
+            .projects--hovered & {
+                &:hover {
+                    z-index: 10;
+                }
+            }
+            &--hidden {
+                opacity: 0;
+            }
+        }
+    }
+    &__title {
+        text-transform: uppercase;
+        @include medium {
+            display: inline;
+            transition: color .5s;
+            .projects--hovered &, .projects__item--hidden & {
+                color: $dark-grey;
+            }
+            .projects__item:hover & {
+                color: white;
+                transition: color .2s;
+            }
+            &:after {
+                content: ' ';
+            }
+        }
+    }
+    &__summary {
+        display: none;
+        color: $dark-grey;
+        @include medium {
+            .projects--show-descriptions & {
+                display: inline;
+            }
+            transition: color .5s;
+            .projects--hovered & {
+                color: black;
+            }
+            .projects__item:hover & {
+                color: $grey;
+                transition: color .2s;
+            }
+            &:after {
+                content: ' ';
+            }
+        }
+    }
+    &__end {
+        display: none;
+        @include medium {
+            display: inline;
+        }
+    }
+}

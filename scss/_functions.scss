@@ -1,0 +1,19 @@
+@function column-right ( $x: 1, $add: 0rem ) {
+    @return calc( ( ( 100vw - #{ $gutter } ) / #{ $columns } ) * #{ $x } + #{ $add } );
+}
+
+@function column-width ( $n ) {
+    @return calc(
+        ( ( 100vw - #{ $gutter } * #{ $columns - 1 } ) / #{ $columns } ) * #{ $n } +
+        #{ $gutter } * #{ $n - 1 }
+    )
+    // @return column-right( $n, -$gutter );
+}
+
+@function column-offset ( $n ) {
+    @return column-right( $n, $gutter );
+}
+
+@function uncalc ( $expr ) {
+    @return str-slice( $expr, 5 );
+}

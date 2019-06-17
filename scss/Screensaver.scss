@@ -1,0 +1,39 @@
+.screensaver {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1000;
+    background: black;
+    transition: opacity .2s;
+    opacity: 0;
+    display: none;
+    @include medium {
+        display: block;
+    }
+    &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border: 1px solid $grey;
+        border-radius: 50%;
+        @include medium {
+            width: calc(100vmin - 160px);
+            height: calc(100vmin - 160px);
+        }
+        @include large {
+            width: calc(100vmin - 200px);
+            height: calc(100vmin - 200px);
+        }
+    }
+    &--on {
+        opacity: 1;
+        transition: opacity 2s;
+        pointer-events: visible;
+    }
+}

@@ -1,0 +1,9 @@
+.back {
+    height: 100vh;
+    display: block;
+    @include medium {
+        background: $light-grey;
+        color: black;
+        height: 25vh;
+    }
+}

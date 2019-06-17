@@ -1,0 +1,28 @@
+.composition {
+    height: 100vh;
+    &__asset {
+        position: fixed;
+        display: block;
+        transition: opacity 2s;
+        &--dark {
+            opacity: .2;
+        }
+        &:hover {
+            // z-index: 10;
+        }
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+    &__single-asset {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        max-width: column-width( 14 );
+        max-height: 80vh;
+        object-fit: contain;
+    }
+    html:not(.touch) & h6 { display: none };
+}

@@ -1,0 +1,22 @@
+.thumbnail {
+    $size: 20vw;
+    position: absolute;
+    top: -$size / 2;
+    left: -$size / 2;
+    width: $size;
+    height: $size;
+    pointer-events: none;
+    object-fit: contain;
+    display: none;
+    // animation: fade-in .2s;
+    // animation-fill-mode: both;
+    @include medium {
+        body:not(.touch) & {
+            display: block;
+        }
+    }
+    // &--exit {
+    //     animation: fade-out 2s;
+    //     z-index: -10;
+    // }
+}

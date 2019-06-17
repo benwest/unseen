@@ -1,0 +1,98 @@
+@font-face {
+    src: url(/fonts/MaisonNeueExtended-Book.woff);
+    font-family: 'Maison Neue';
+}
+
+@font-face {
+    src: url(/fonts/Ogg-Roman.woff);
+    font-family: 'Ogg';
+}
+
+@font-face {
+    src: url(/fonts/Ogg-Italic.woff);
+    font-family: 'Ogg';
+    font-style: italic;
+}
+
+html {
+    font-size: 12px;
+    line-height: 1.2;
+    font-family: 'Maison Neue', sans-serif;
+}
+
+h2 {
+    font-family: 'Ogg', serif;
+    font-size: 25px;
+    line-height: 33px;
+    @include medium {
+        font-size: 38px;
+        line-height: 45px;
+    }
+    @include large {
+        font-size: 50px;
+        line-height: 60px;
+    }
+    @include xlarge {
+        font-size: 58px;
+        line-height: 65px;
+    }
+    // font-size: 2rem;
+    // line-height: 1.15;
+    // @include medium {
+    //     font-size: 3rem;
+    // }
+    // @include large {
+    //     font-size: 4rem;
+    // }
+}
+
+h3 {
+    font-family: 'Ogg', serif;
+    font-size: 1.8rem;
+    @include medium {
+        font-size: 2.3rem;
+    }
+    @include large {
+        font-size: 2.5rem;
+    }
+}
+
+h6 {
+    text-transform: uppercase;
+    letter-spacing: .2em;
+    font-size: 1rem;
+    font-family: 'Maison Neue', sans-serif
+}
+
+p {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    margin-bottom: 1em;
+}
+
+blockquote p {
+    // @extend h2;
+    font-family: 'Ogg', serif;
+    font-size: 2rem;
+    line-height: 1.4;
+    @include medium {
+        font-size: 2.9rem;
+        line-height: 3.5rem;
+    }
+    @include large {
+        font-size: 3.2rem;
+        line-height: 4rem;
+    }
+    margin-bottom: 1em;
+}
+
+.outline {
+    // -webkit-text-fill-color: black;
+    // -webkit-text-stroke: 1px white
+    html:not(.touch) & {
+        transition: filter .2s;
+        &:hover {
+            filter: blur(6px)
+        }
+    }
+}

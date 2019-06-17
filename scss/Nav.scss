@@ -1,0 +1,47 @@
+.nav {
+    position: fixed;
+    display: none;
+    z-index: 900;
+    top: $gutter;
+    left: 50%;
+    transform: translateX(-50%);
+    &--vertical {
+        left: $gutter;
+        top: 50%;
+        transform-origin: center top;
+        transform: translate(-50%,-50%) rotate(-90deg);
+    }
+    @include medium {
+        display: block;
+    }
+    &__item {
+        color: $grey;
+        transition: color .2s;
+        cursor: pointer;
+        display: inline-block;
+        .red & {
+            color: $pink;
+        }
+        &:not(:last-child) {
+            padding-right: 1.5em;
+        }
+        &:hover, .red &:hover {
+            color: white;
+        }
+        &--active {
+            color: white;
+            .red & {
+                color: white;
+            }
+            .nav:hover & {
+                color: $grey;
+                .red & {
+                    color: $pink;
+                }
+                &:hover {
+                    color: white;
+                }
+            }
+        }
+    }
+}

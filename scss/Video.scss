@@ -1,0 +1,56 @@
+.video {
+    &--has-audio {
+        cursor: pointer;
+    }
+    &__mute {
+        cursor: pointer;
+        position: absolute;
+        bottom: 1rem;
+        left: 1rem;
+        width: 2rem;
+        height: 2rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: left bottom;
+        pointer-events: none;
+        html:not(.touch) & {
+            transition: opacity .2s;
+            &--mute {
+                opacity: 0;
+            }
+        }
+        &--mute {
+            background-image: url('/assets/mute.svg');
+        }
+        &--unmute {
+            background-image: url('/assets/unmute.svg');
+        }
+    }
+    html:not(.touch) &:hover .video__mute {
+        opacity: 1;
+    }
+}
+
+
+.mute {
+    
+    
+    // &--mute,
+    // &--unmute {
+    //     cursor: pointer;
+    //     &:after {
+    //         position: absolute;
+    //         display: block;
+    //         top: 0;
+    //         left: 0;
+    //     }
+    // }
+    // &--mute:after {
+    //     content: "Mute";
+    // }
+    // &--unnmute:after {
+    //     content: "Mute";
+    // }
+}
