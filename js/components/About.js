@@ -10,13 +10,16 @@ var Lightbox = require('./Lightbox');
 var bem = require('../utils/bem');
 var scrollTo = require('../utils/scrollTo');
 
-var nav = active => m('.nav',
+var nav = ( active, links ) => m('.nav',
     [ 'Profile', 'Clients', 'Ethos', 'News'].map( ( text, i ) => {
         return m( 'h6',{
             className: bem( 'nav__item', { active: i === active } ),
             onclick: () => scrollTo( document.querySelectorAll( '.about__section' )[ i ] )
         }, text )
-    })
+    }),
+    links.map( ({ url, label }) => m( 'h6.nav__item',
+        m( 'a', { href: url, target: '_blank' }, label )
+    ))
 )
 
 var Profile = {
@@ -77,13 +80,13 @@ module.exports = Page({
     },
     view: ({
         attrs: {
-            about: { video, body, people, quote, attribution, description, clients },
+            about: { video, body, people, quote, attribution, description, clients, links },
             news
         },
         state
     }) => {
         return m('.about',
-            nav( state.section ),
+            nav( state.section, links ),
             m('.about__section.about__section--profile',
                 m( Profile, { video, body, people } )
             ),

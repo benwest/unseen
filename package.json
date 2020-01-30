@@ -33,6 +33,7 @@
     "eases": "^1.0.8",
     "fastdom": "^1.0.8",
     "fontfaceobserver": "^2.0.13",
+    "jquery": "^3.4.1",
     "mithril": "^1.1.6",
     "smoothscroll-polyfill": "^0.4.3",
     "stickyfilljs": "^2.0.3"
